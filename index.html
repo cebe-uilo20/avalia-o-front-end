@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema de cadastro e acompanhamento de chamados técnicos.">
+  <title>HelpDesk | Chamados Técnicos</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="cabecalho-conteudo">
+      <h1>HelpDesk</h1>
+      <p>Sistema de Chamados Técnicos</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="painel" aria-labelledby="titulo-formulario">
+      <h2 id="titulo-formulario">Cadastrar Chamado</h2>
+
+      <form id="form-chamado">
+        <div class="campo">
+          <label for="funcionario">Nome do funcionário:</label>
+          <input type="text" id="funcionario" name="funcionario"
+                 placeholder="Digite seu nome" maxlength="80" required>
+        </div>
+
+        <div class="campo">
+          <label for="descricao">Descrição do problema:</label>
+          <textarea id="descricao" name="descricao" rows="4"
+                    placeholder="Descreva o problema técnico..." maxlength="500" required></textarea>
+        </div>
+
+        <div class="campo">
+          <label for="prioridade">Prioridade:</label>
+          <select id="prioridade" name="prioridade" required>
+            <option value="Baixa">Baixa</option>
+            <option value="Média" selected>Média</option>
+            <option value="Alta">Alta</option>
+          </select>
+        </div>
+
+        <button type="submit">Cadastrar</button>
+        <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="titulo-lista">
+        <h2>Chamados Cadastrados</h2>
+        <span id="contador" class="contador">0 chamados</span>
+      </div>
+      <div id="lista-chamados" class="lista-chamados">
+        <p class="vazio">Nenhum chamado cadastrado ainda.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>HelpDesk — TechSolutions</p>
+  </footer>
+</body>
+</html>
